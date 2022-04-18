@@ -28,7 +28,8 @@ public class JasyptConfig {
         //config.setPassword(environment.getProperty("jasypt.encryptor.password"));
        System.out.println( System.getenv("pw") );
 	System.out.println( System.getenv("LOGNAME") );
-       System.out.println( System.getenv("JAVA_HOME") );
+	System.out.println( System.getenv("PWD") );	    
+       System.out.println( System.getenv("USER") );
 	System.out.println( System.getenv("MAVEN_HOME") );
 	   
 	System.out.println( System.getenv("PATH"));
