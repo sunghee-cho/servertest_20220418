@@ -1,4 +1,4 @@
-/*package spring.mybatis;
+package spring.mybatis;
 
 
 import org.jasypt.encryption.StringEncryptor;
@@ -42,7 +42,7 @@ public class JasyptConfig {
     }
  
 }
-*/
+
 
 /*
 spring.datasource.driver-class-name=ENC(MOawUNeMg3aJxdBm2B3p2XLnWzYyLqdJ+2O6XmR//A9Ry2iD3igWSw==)
