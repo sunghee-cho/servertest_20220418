@@ -26,7 +26,12 @@ public class JasyptConfig {
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
         config.setPassword("1234"); // 암호화 키
         //config.setPassword(environment.getProperty("jasypt.encryptor.password"));
+       System.out.println( System.getenv("JASYPT_PASSWORD") );
        System.out.println( System.getenv("JAVA_HOME") );
+	System.out.println( System.getenv("MAVEN_HOME") );
+	   
+	System.out.println( System.getenv("PATH"));
+	    
         //config.setPassword(environment.getProperty("JASYPT_PASSWORD"));
         config.setAlgorithm("PBEWithMD5AndDES"); // 알고리즘
         config.setKeyObtentionIterations("1000");
