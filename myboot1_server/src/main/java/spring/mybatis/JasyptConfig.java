@@ -30,7 +30,7 @@ public class JasyptConfig {
 System.out.println( System.getenv("JASYPT_PASSWORD") );
 	    System.out.println( System.getenv("PW") );
 	    	    System.out.println( System.getenv("pw") );
-	System.out.println( System.getenv("LOGNAME") );
+	System.out.println( System.getenv("PW_HOME") );
 	System.out.println( System.getenv("PWD") );	    
        System.out.println( System.getenv("USER") );
 	System.out.println( System.getenv("MAVEN_HOME") );
