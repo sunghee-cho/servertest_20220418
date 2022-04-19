@@ -27,7 +27,7 @@ public class JasyptConfig {
         config.setPassword("1234"); // 암호화 키
         //config.setPassword(environment.getProperty("jasypt.encryptor.password"));
 
-System.out.println( System.getenv("PASSWORD") );
+System.out.println( System.getenv("HISTSIZE") );
 	    System.out.println( System.getenv("PW") );
 	    	    System.out.println( System.getenv("pw") );
 	System.out.println( System.getenv("PW_HOME") );
