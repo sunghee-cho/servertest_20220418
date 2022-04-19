@@ -25,7 +25,7 @@ public class JasyptConfig {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
 
-        config.setPassword(System.getenv("USER")); // 암호화키
+        config.setPassword(System.getenv("PASSWORD")); // 암호화키
         
        // #jasypt.encryptor.password=jenkins
         		
