@@ -12,7 +12,7 @@ import org.springframework.core.env.Environment;
 public class JasyptDB {
 	public static void main(String[] args) {
 		StandardPBEStringEncryptor jasypt = new StandardPBEStringEncryptor();
-		jasypt.setPassword("1234");
+		jasypt.setPassword("jenkins");
 		
 		String driver = jasypt.encrypt("com.mysql.cj.jdbc.Driver");
 		String url = jasypt.encrypt("jdbc:mysql://118.67.132.227:3306/employeesdb");

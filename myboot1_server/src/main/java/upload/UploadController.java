@@ -23,15 +23,16 @@ public class UploadController {
 		MultipartFile mf2 = dto.getFile2();
 		System.out.println(dto.getName());
 		System.out.println(dto.getDescription());	
-		System.out.println(mf1.getOriginalFilename()); //¾÷·ÎµåÇÑ ÆÄÀÏÀÌ¸§
-		System.out.println(mf2.getOriginalFilename()); //ÀÌ¸§
-		System.out.println(mf1.getSize()); //±æÀÌ
-		System.out.println(mf2.getSize()); //±æÀÌ
-		System.out.println(mf1.isEmpty()); //ÆÄÀÏ¼±ÅÃ¿©ºÎ
+		System.out.println(mf1.getOriginalFilename()); //ì—…ë¡œë“œí•œ íŒŒì¼ì´ë¦„
+		System.out.println(mf2.getOriginalFilename()); //ì´ë¦„
+		System.out.println(mf1.getSize()); //ê¸¸ì´
+		System.out.println(mf2.getSize()); //ê¸¸ì´
+		System.out.println(mf1.isEmpty()); //íŒŒì¼ì„ íƒì—¬ë¶€
 		System.out.println(mf2.isEmpty());
 
-		// ÆÄÀÏ³»¿ë+ÆÄÀÏ¸í--> ¼­¹ö c:/upload Æú´õ ¿µ±¸ ÀúÀå
-		String savePath = "c:/upload/";
+		// íŒŒì¼ë‚´ìš©+íŒŒì¼ëª…--> ì„œë²„ c:/upload í´ë” ì˜êµ¬ ì €ì¥
+		//String savePath = "c:/upload/";
+		String savePath = "/usr/mydir/upload/";
 		
 		if(!mf1.isEmpty()) {
 			String originname1 = mf1.getOriginalFilename();
@@ -41,11 +42,11 @@ public class UploadController {
 			mf1.transferTo(serverfile1);
 		}
 		if(!mf2.isEmpty()) {
-			//¿ø·¡ÆÄÀÏ¸í
+			//ì›ë˜íŒŒì¼ëª…
 			String originname2 = mf2.getOriginalFilename();
-			//È®ÀåÀÚ ÀÌÀüÆÄÀÏ¸í
+			//í™•ì¥ì ì´ì „íŒŒì¼ëª…
 			String beforeext2 = originname2.substring(0, originname2.indexOf("."));
-			//È®ÀåÀÚ ÀÌÈÄ
+			//í™•ì¥ì ì´í›„
 			String ext2 = originname2.substring(originname2.indexOf("."));
 			
 			File serverfile2 = new File(savePath + beforeext2+"("+UUID.randomUUID().toString()+")"+ext2); 

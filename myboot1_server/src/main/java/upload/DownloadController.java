@@ -27,19 +27,19 @@ public ModelAndView downloadlist() {
 @RequestMapping("/filedownloadresult")
 	public void downloadresult(String filename, HttpServletResponse response)
 throws IOException {
-	//ÆÄÀÏÃÑ±æÀÌ
+	//íŒŒì¼ì´ê¸¸ì´
 	File f = new File("c:/upload/" , filename);
 	int len  =(int) f.length();
-	//ÆÄÀÏ´Ù¿î·Îµå http ÀÀ´ä °´Ã¼ ¼±¾ğ
+	//íŒŒì¼ë‹¤ìš´ë¡œë“œ http ì‘ë‹µ ê°ì²´ ì„ ì–¸
 	response.setContentType("application/download");
 	response.setContentLength(len);
 	response.setHeader
 	("Content-Disposition", "attachment;filename=\"" + filename +"\"");
 	
-	//ÆÄÀÏ Àü¼Û
-	OutputStream out = response.getOutputStream(); //ºê¶ó¿ìÀú ÀÀ´ä	Ãâ·Â°´Ã¼
-	FileInputStream fin = new FileInputStream(f); //ÆÄÀÏÀÔ·Â°´Ã¼ »ı¼º
-	FileCopyUtils.copy(fin, out);//¼­¹öÆÄÀÏÀÔ·Â°´Ã¼¸¦ ºê¶ó¿ìÀúÀÀ´äÃâ·Â°´Ã¼·Î º¹»ç
+	//íŒŒì¼ ì „ì†¡
+	OutputStream out = response.getOutputStream(); //ë¸Œë¼ìš°ì € ì‘ë‹µ	ì¶œë ¥ê°ì²´
+	FileInputStream fin = new FileInputStream(f); //íŒŒì¼ì…ë ¥ê°ì²´ ìƒì„±
+	FileCopyUtils.copy(fin, out);//ì„œë²„íŒŒì¼ì…ë ¥ê°ì²´ë¥¼ ë¸Œë¼ìš°ì €ì‘ë‹µì¶œë ¥ê°ì²´ë¡œ ë³µì‚¬
 	fin.close();
 	out.close();
 }
