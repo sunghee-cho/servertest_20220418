@@ -26,8 +26,8 @@ public class JasyptConfig {
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
 
         config.setPassword(System.getenv("PASSWORD")); // 암호화키
-        config.setPassword("1234"); // 암호화키
-       // #jasypt.encryptor.password=jenkins
+        //config.setPassword("1234"); // 암호화키
+       	System.out.println( System.getenv("PASSWORD") );
         		
         		
 
