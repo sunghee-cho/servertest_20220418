@@ -25,8 +25,8 @@ public class JasyptConfig {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
 
-        //config.setPassword("1234"); // 암호화키
-        config.setPassword(System.getenv("PASSWORD")); // 암호화키
+        config.setPassword("1234"); // 암호화키
+        //config.setPassword(System.getenv("PASSWORD")); // 암호화키
        	System.out.println( System.getenv("PASSWORD") );
         		
         		
