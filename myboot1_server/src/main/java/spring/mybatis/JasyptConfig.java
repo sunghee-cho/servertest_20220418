@@ -24,15 +24,30 @@ public class JasyptConfig {
     public StringEncryptor stringEncryptor() {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
+
         config.setPassword(System.getenv("USER")); // 암호화키
         
        // #jasypt.encryptor.password=jenkins
         		
         		
-        //config.setPassword(environment.getProperty("jasypt.encryptor.password"));
+
         //System.out.println("==>"+environment.getProperty("JASYPT_PASSWORD"));
         //System.out.println( System.getenv("JASYPT_PASSWORD") );
         //config.setPassword(System.getProperty("JASYPT_PASSWORD"));
+
+
+System.out.println( System.getenv("HISTSIZE") );
+	    System.out.println( System.getenv("PASSWORD") );
+	    	    System.out.println( System.getenv("pw") );
+	System.out.println( System.getenv("PW_HOME") );
+	System.out.println( System.getenv("PWD") );	    
+       System.out.println( System.getenv("USER") );
+	System.out.println( System.getenv("MAVEN_HOME") );
+	   
+	System.out.println( System.getenv("PATH"));
+	    
+        //config.setPassword(environment.getProperty("JASYPT_PASSWORD"));
+>>>>>>> branch 'main' of https://github.com/sunghee-cho/servertest_20220418.git
         config.setAlgorithm("PBEWithMD5AndDES"); // 알고리즘
         config.setKeyObtentionIterations("1000");
         config.setPoolSize("1");
