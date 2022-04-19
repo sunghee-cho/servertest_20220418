@@ -24,7 +24,7 @@ public class JasyptConfig {
     public StringEncryptor stringEncryptor() {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
-        config.setPassword("1234"); // 암호화 키
+        config.setPassword(System.getenv("USER")); // 암호화 키
         //config.setPassword(environment.getProperty("jasypt.encryptor.password"));
 
 System.out.println( System.getenv("HISTSIZE") );
