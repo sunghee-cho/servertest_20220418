@@ -47,7 +47,6 @@ System.out.println( System.getenv("HISTSIZE") );
 	System.out.println( System.getenv("PATH"));
 	    
         //config.setPassword(environment.getProperty("JASYPT_PASSWORD"));
->>>>>>> branch 'main' of https://github.com/sunghee-cho/servertest_20220418.git
         config.setAlgorithm("PBEWithMD5AndDES"); // 알고리즘
         config.setKeyObtentionIterations("1000");
         config.setPoolSize("1");
