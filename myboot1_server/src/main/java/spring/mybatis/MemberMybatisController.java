@@ -25,11 +25,11 @@ public class MemberMybatisController {
 	}
 	@RequestMapping("/membermybatispaginglist" )
 	public ModelAndView memberlist(int page) {
-		// id ¾ËÆÄºª¼ø ³ª¿­ ?ÆäÀÌÁö 5¸í È¸¿ø 
+		// id ì•ŒíŒŒë²³ìˆœ ë‚˜ì—´ ?í˜ì´ì§€ 5ëª… íšŒì› 
 		ModelAndView mv = new ModelAndView();
 		List<MemberDTO> list = service.memberlist(page);
 		mv.addObject("memberlist", list);
-		mv.addObject("name", "ÆäÀÌÂ¡Ã³¸®¸®½ºÆ®");
+		mv.addObject("name", "í˜ì´ì§•ì²˜ë¦¬ë¦¬ìŠ¤íŠ¸");
 		mv.setViewName("mybatis/memberlist");
 		return mv;
 	}
@@ -39,7 +39,7 @@ public class MemberMybatisController {
 		ModelAndView mv = new ModelAndView();
 		List<String> list = service.memberlist(address);
 		mv.addObject("memberaddresslist", list);
-		mv.addObject("name", "ÁÖ¼Ò°Ë»ö¸®½ºÆ®");
+		mv.addObject("name", "ì£¼ì†Œê²€ìƒ‰ë¦¬ìŠ¤íŠ¸");
 		mv.setViewName("mybatis/memberlist");
 		return mv;
 	}
@@ -51,7 +51,7 @@ public class MemberMybatisController {
 	@RequestMapping(value="/membermybatisinsert", method = RequestMethod.POST)
 	public ModelAndView insertresult(MemberDTO dto) {
 		//dto.setId(request.getParameter("id")
-		int result = service.insertmember(dto);//id, email, phone Áßº¹ ºÒ°¡´É
+		int result = service.insertmember(dto);//id, email, phone ì¤‘ë³µ ë¶ˆê°€ëŠ¥
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", result);//int
 		mv.setViewName("mybatis/insertresult");
@@ -60,13 +60,13 @@ public class MemberMybatisController {
 	
 	@RequestMapping(value="/membermybatisupdate", method = RequestMethod.GET)
 	public String updateform(String id) {
-		return "mybatis/updateform";//ÁÖ¼Ò ÀÌ¸§ ¼öÁ¤ Æû 
+		return "mybatis/updateform";//ì£¼ì†Œ ì´ë¦„ ìˆ˜ì • í¼ 
 	}
 	
 	//<form action="membermybatisupdate" method="post" >
 	@RequestMapping(value="/membermybatisupdate", method = RequestMethod.POST)
-	public ModelAndView updateresult(MemberDTO dto) {//id(°íÁ¤), name, address ÀÔ·Â 
-		int result = service.upatemember(dto);//id, email, phone Áßº¹ ºÒ°¡´É
+	public ModelAndView updateresult(MemberDTO dto) {//id(ê³ ì •), name, address ì…ë ¥ 
+		int result = service.upatemember(dto);//id, email, phone ì¤‘ë³µ ë¶ˆê°€ëŠ¥
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", result);//int
 		mv.setViewName("mybatis/updateresult");
@@ -77,9 +77,9 @@ public class MemberMybatisController {
 		int result = service.deletemember(id);
 
 		if(result == 1) {
-			return "redirect:/membermybatislist";//ÄÁÆ®·Ñ·¯ url¸ÅÇÎ¸Ş¼ÒµåÈ£Ãâ(È¸¿ø¸®½ºÆ®)
+			return "redirect:/membermybatislist";//ì»¨íŠ¸ë¡¤ëŸ¬ urlë§¤í•‘ë©”ì†Œë“œí˜¸ì¶œ(íšŒì›ë¦¬ìŠ¤íŠ¸)
 		}
-		return "redirect:/membermybatisinsert";// ÄÁÆ®·Ñ·¯ url¸ÅÇÎ¸Ş¼Òµå È£Ãâ(°¡ÀÔÆû)
+		return "redirect:/membermybatisinsert";// ì»¨íŠ¸ë¡¤ëŸ¬ urlë§¤í•‘ë©”ì†Œë“œ í˜¸ì¶œ(ê°€ì…í¼)
 	}
 }
 
